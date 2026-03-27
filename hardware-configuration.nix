@@ -9,7 +9,7 @@
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
@@ -22,6 +22,11 @@
     { device = "/dev/disk/by-uuid/67E3-17ED";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
+    };
+  fileSystems."/home/shin/hd" =
+    { device = "/dev/disk/by-uuid/035a9c73-0ef2-4be1-8dc7-3093f4a2ea7a";
+      fsType = "btrfs";
+      options = [ "rw" "relatime" "space_cache=v2" "subvol=/" "noauto" "nofail" "x-systemd.automount" "defaults" "x-systemd.device-timeout=3" ];
     };
 
   swapDevices = [ ];

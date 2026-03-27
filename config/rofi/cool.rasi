@@ -1,0 +1,103 @@
+/**
+ * rofi -dump-theme output.
+ * Rofi version: 1.7.8
+ **/
+* {
+    border-col:   #7199ee;
+    blue:         #7199ee;
+    grey:         #11121D;
+    bg-col-light: #06080a00;
+    selected-col: #06080a00;
+    fg-col2:      #6189de;
+    bg-col:       #06080a;
+    font:         "JetBrainsMono Nerd Font 14";
+    fg-col:       #7199ee;
+    width:        640px;
+}
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+element-icon {
+    background-color: inherit;
+    size:             25px ;
+    text-color:       inherit;
+}
+mode-switcher {
+    background-color: inherit;
+    spacing:          0;
+    text-color:       inherit;
+}
+window {
+    background-color: #06080aa0;
+    height:           460px ;
+    border-radius: 32px;
+}
+mainbox {
+    background-color: var(bg-col);
+}
+inputbar {
+    padding:          2px ;
+    background-color: var(bg-col);
+    children:         [ "prompt","entry" ];
+    border-radius:    16px ;
+    border: 1px;
+    border-color: var(bg-col);
+}
+prompt {
+    padding:          6px ;
+    background-color: var(blue);
+    margin:           20px 0px 0px 20px ;
+    text-color:       #06080a;
+    border-radius:    16px ;
+}
+textbox-prompt-colon {
+    expand: false;
+    str:    ":";
+}
+entry {
+    padding:          6px ;
+    margin:           20px 0px 0px 10px ;
+    background-color: var(bg-col);
+    text-color:       var(fg-col);
+}
+listview {
+    padding:          6px 0px 0px ;
+    margin:           10px 0px 0px 20px ;
+    background-color: var(bg-col);
+    columns:          2;
+    lines:            5;
+    border:           0px ;
+}
+element {
+    padding:          5px ;
+    background-color: var(bg-col);
+    text-color:       var(fg-col);
+}
+element selected {
+    background-color: var(selected-col);
+    text-color:       var(fg-col2);
+}
+button {
+    padding:          10px ;
+    background-color: var(bg-col-light);
+    vertical-align:   0.50;
+    horizontal-align: 0.50;
+    text-color:       var(grey);
+}
+button selected {
+    background-color: var(bg-col);
+    text-color:       var(blue);
+}
+message {
+    padding:          2px ;
+    background-color: var(bg-col-light);
+    margin:           2px ;
+    border-radius:    8px ;
+}
+textbox {
+    padding:          6px ;
+    margin:           20px 0px 0px 20px ;
+    background-color: var(bg-col-light);
+    text-color:       var(blue);
+}

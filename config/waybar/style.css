@@ -1,0 +1,249 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "JetBrains Mono Nerd Font", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+    transition: background 0.25s, box-shadow 0.25s;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    transition: background 0.25s, box-shadow 0.25s;
+}
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover {
+    background-color: #a37800;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#mode {
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#custom-cava {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#workspaces {
+    margin: 0 4px;
+    transition: width 0.3s ease, min-width 0.3s ease, max-width 0.3s ease;
+    min-width: 0;
+    color: rgba(56, 168, 157, 1);
+}
+
+#clock {
+    background-color: rgba(0, 0, 0, 0);
+    transition: color 0.25s, background-color 0.25s;
+    color: #fff;
+    margin: 0 10px 0 0;
+}
+
+.modules-right {
+    padding: 0 2px;
+    margin: 0px 5px 0 0;
+    border-radius: 32px;
+    background-color: rgba(0, 0, 0, 0.0);
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.modules-left {
+    padding: 0 2px;
+    margin: 0px 0 0 5px;
+    border-radius: 32px;
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+.modules-center {
+    padding: 0 12px;
+    margin: 0px 0 0 0;
+    border-radius: 32px;
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+#battery {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+    color: #ffffff;
+}
+
+#power-profiles-daemon.balanced {
+    color: #ffffff;
+}
+
+#power-profiles-daemon.power-saver {
+    color: #000000;
+}
+
+label:focus {
+    background-color: rgba(36, 40, 59, 0.0);
+}
+
+#cpu {
+    background-color: rgba(36, 40, 59, 0.0);
+    color: #95c561;
+}
+
+#memory {
+    background-color: rgba(36, 40, 59, 0.0);
+    color: #7199ee;
+}
+
+#disk {
+    background-color: rgba(36, 40, 59, 0.0);
+    color: #FFFFFF;
+}
+
+#backlight {
+    background-color: rgba(36, 40, 59, 0.0);
+    color: #FFFFFF;
+}
+
+#network {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+#network.disconnected {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+#pulseaudio {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+#wireplumber {
+
+    color: #000000;
+}
+
+#temperature {
+    background-color: rgba(36, 40, 59, 0.0);
+    color: #a485dd;
+}
+
+#temperature.critical {
+    background-color: #ED2839;
+}
+
+#idle_inhibitor {
+    color: #4a5057;
+    transition: color 0.25s, background-color 0.25s;
+}
+
+#idle_inhibitor.activated {
+    color: #ffffff;
+}
+
+#privacy {
+    padding: 0;
+    margin: 0;
+}
+/* If workspaces is the leftmost module, omit left margin */
+
+#privacy-item {
+    padding: 0 5px;
+    margin: 0;
+    color: white;
+}
+
+#privacy-item.screenshare {
+    background-color: transparent;
+}
+
+#privacy-item.audio-in {
+    background-color: transparent;
+}
+
+#privacy-item.audio-out {
+    background-color: transparent;
+}
+
