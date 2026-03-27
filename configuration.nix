@@ -81,12 +81,18 @@
 # Enable CUPS to print documents.
     services.printing.enable = true;
     services.flatpak.enable = true;
+
     xdg.portal.enable = true;
     xdg.portal.extraPortals = with pkgs; [
         xdg-desktop-portal-wlr
         xdg-desktop-portal-gtk
     ];
     xdg.portal.config.common.default = "*";
+
+    programs.gnupg.agent = {
+        enable = true;
+        pinentryPackage = pkgs.pinentry-curses;
+    };
 
 # Enable sound.
 # services.pulseaudio.enable = true;
@@ -167,6 +173,8 @@
         mpdscribble
         (pkgs.callPackage ./pkgs/reversal-dark.nix {})
         cava
+        gnupg
+        pinentry-curses
     ];
 
     fonts.packages = with pkgs; [

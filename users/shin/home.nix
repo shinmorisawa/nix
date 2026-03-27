@@ -40,6 +40,20 @@
         };
     };
 
+    programs.git = {
+        enable = true;
+        settings = {
+            user.name = "Shin Morisawa";
+            user.email = "git@tryh4rd.dev";
+            commit.gpgSign = true;
+        };     
+
+        signing = {
+            key = "8B8F8551938A9A71";
+            signByDefault = true;
+        };
+    };
+
     programs.neovim = {
         enable = true;
         defaultEditor = true;
