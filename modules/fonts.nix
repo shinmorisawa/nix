@@ -3,7 +3,7 @@
 pkgs.stdenv.mkDerivation {
     pname = "fonts";
     version = "1.0";
-    src = ../assets/fonts;
+    src = ./../assets/fonts;
     installPhase = ''
         mkdir -p $out/share/fonts/opentype
         mkdir -p $out/share/fonts/truetype

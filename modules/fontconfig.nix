@@ -3,10 +3,10 @@
 {
     fonts.packages = with pkgs; [
         noto-fonts-cjk-sans
-            noto-fonts
-            noto-fonts-color-emoji
-            nerd-fonts.jetbrains-mono
-            (pkgs.callPackage ./modules/fonts.nix {})
+        noto-fonts
+        noto-fonts-color-emoji
+        nerd-fonts.jetbrains-mono
+        (pkgs.callPackage ./../modules/fonts.nix {})
     ];
 
     fonts.fontconfig = {

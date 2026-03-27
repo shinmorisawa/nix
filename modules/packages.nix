@@ -11,7 +11,7 @@
         (dwl.overrideAttrs
             (
                 oldAttrs: {
-                    src = ./repos/dwl-fork;
+                    src = ./../repos/dwl-fork;
                     buildInputs = oldAttrs.buildInputs ++ [ wlroots_0_19 ];
                     patches = [];
                 }
@@ -47,7 +47,7 @@
         ario
         mpd-discord-rpc
         mpdscribble
-        (pkgs.callPackage ./modules/reversal-dark.nix {})
+        (pkgs.callPackage ./../modules/reversal-dark.nix {})
         cava
         gnupg
         pinentry-curses
