@@ -52,5 +52,6 @@
         gnupg
         pinentry-curses
         grim
+        mpc
     ];
 }
