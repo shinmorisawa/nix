@@ -69,7 +69,8 @@
     ];
   };
 
-  # programs.firefox.enable = true;
+  programs.fish.enable = true;
+  programs.xwayland.enable = true;
 
   # List packages installed in system profile.
   #You can use https://search.nixos.org/ to find more packages (and options).
@@ -83,8 +84,10 @@
     librewolf
     noto-fonts-cjk-sans
     (dwl.overrideAttrs (
-      finalAttrs: previousAttrs: { patches = [./patches/dwl.patch]; }
-    ))
+      oldAttrs: {
+          src = ./repos/dwl-fork;
+	  patches = [];
+    }))
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -131,4 +134,3 @@
   system.stateVersion = "25.11"; # Did you read the comment?
 
 }
-
