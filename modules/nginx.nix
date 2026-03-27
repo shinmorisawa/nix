@@ -3,6 +3,12 @@
 {
     services.nginx.enable = true;
 
+    systemd.services.nginx.serviceConfig.ReadOnlyPaths = [ 
+        "/home/shin/programming" 
+        "/home/shin/Pictures" 
+        "/home/shin/hd" 
+    ];
+
     security.acme = {
         acceptTerms = true;
         defaults.email = "me@tryh4rd.dev";

@@ -175,13 +175,13 @@ static const Button buttons[] = {
 static const Executables executables = {
     (const Executable[]) {
         {
-            .args = (const char*[]) { "/home/shin/.cargo/bin/mpd-discord-rpc", NULL }, .env = (const char*[]) { NULL }
+            .args = (const char*[]) { "mpd-discord-rpc", NULL }, .env = (const char*[]) { NULL }
         },
         {
-            .args = (const char*[]) { "/usr/bin/mako", NULL }, .env = (const char*[]) { NULL }
+            .args = (const char*[]) { "mako", NULL }, .env = (const char*[]) { NULL }
         },
         {
-            .args = (const char*[]) { "/usr/local/bin/mpdscribble", NULL }, .env = (const char*[]) { NULL }
+            .args = (const char*[]) { "mpdscribble", NULL }, .env = (const char*[]) { NULL }
         },
         {
             .args = (const char*[]) { "/home/shin/.local/bin/fcitx5.sh", NULL }, .env = (const char*[]) { NULL }

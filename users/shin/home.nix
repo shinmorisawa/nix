@@ -68,7 +68,76 @@
         ];
     };
 
+    programs.starship = {
+        enable = true;
+        settings = {
+            palette = "tokyodark";
+            format = ''
+            $directory
+            $character
+            '';
+            character = {
+                success_symbol = "[(green)>](peach)";
+                error_symbol = "[(red)>](peach)";
+                vimcmd_symbol = "[<](subtext1)";
+            };
+            git_branch = {
+                style = "bold mauve";
+            };
+            directory = {
+                style = "bold mauve";
+                truncation_length = 4;
+            };
+            palettes.tokyodark = {
+                mauve = "#A485DD";
+                red = "#EE6D85";
+                peach = "#F6955B";
+                yellow = "#D7A65F";
+                green = "#95C561";
+                teal = "#38A89D";
+                blue = "#7199EE";
+                text = "#A0A8CD";
+                subtext1 = "#bac2de";
+                subtext0 = "#a6adc8";
+                overlay2 = "#9399b2";
+                overlay1 = "#7f849c";
+                overlay0 = "#6c7086";
+                surface2 = "#4A5057";
+                surface1 = "#353945";
+                surface0 = "#212234";
+                base = "#1A1B2A";
+                mantle = "#11121D";
+                crust = "#06080A";
+            };
+        };
+    };
+
     xdg.configFile."nvim".source = ./../../config/nvim;
+
+    services.mako = {
+        enable = true;
+        settings = {
+            actions = true;
+            anchor = "top-right";
+            background-color = "#000000";
+            border-color = "#ffffff";
+            border-size = 2;
+            border-radius = 16;
+            icon-border-radius = 16;
+            markup = true;
+            layer = "overlay";
+            height = 200;
+            width = 400;
+            icons = true;
+            font = "SF Pro Text 12";
+        };
+    };
+    services.mpdscribble = {
+        enable = true;
+        host = "127.0.0.1";
+        port = 40220;
+        package = pkgs.mpdscribble;
+    };
 
     programs.home-manager.enable = true;
 }
