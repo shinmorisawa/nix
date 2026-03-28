@@ -53,5 +53,6 @@
         pinentry-curses
         grim
         mpc
+        clang
     ];
 }
