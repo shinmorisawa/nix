@@ -12,6 +12,7 @@
     nixpkgs.config.permittedInsecurePackages = [
         "libsoup-2.74.3"
     ];
+    nixpkgs.config.rocmSupport = true;
 
     system.stateVersion = "25.11";
 }

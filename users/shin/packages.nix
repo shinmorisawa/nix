@@ -10,7 +10,6 @@
         obs-studio
         inkscape
         gimp
-        blender
         audacity
         prismlauncher
         dolphin-emu

@@ -21,4 +21,24 @@
             }
         '';
     };
+
+    services.mpd-discord-rpc = {
+        enable = true;
+        settings = {
+            id = 677226551607033903;
+            hosts = [ "localhost:40220" ];
+            format = {
+                details = "$title";
+                state = "$title by $artist";
+                timestamp = "both";
+                large_image = "notes";
+                small_image = "";
+                large_text = "i use nixos btw :3";
+                small_text = "i don't like spotify ;)";
+                display_type = "state";
+            };
+        };
+    };
+
+    xdg.configFile."discord-rpc/config.toml".force = true;
 }

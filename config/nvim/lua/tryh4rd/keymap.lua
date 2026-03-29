@@ -9,4 +9,3 @@ vim.keymap.set("n", "<leader>gc", function() neogit.open({ "commit" }) end, { no
 vim.keymap.set("n", "<leader>ga", function() neogit.open({ "stash" }) end, { noremap=true, silent=true, buffer=bufnr })
 vim.keymap.set("n", "<leader>gf", function() neogit.open({ "fetch" }) end, { noremap=true, silent=true, buffer=bufnr })
 vim.keymap.set("n", "<leader>gd", function() neogit.open({ "diff" }) end, { noremap=true, silent=true, buffer=bufnr })
-

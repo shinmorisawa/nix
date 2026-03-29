@@ -54,5 +54,19 @@
         grim
         mpc
         clang
+        meson
+        ninja
+        cmake
+        ffmpeg
+        gnuplot
+        gnumake
+        pkg-config
+        tinyxml-2
+        tinyxml
+        blender
+        whois
+        clang-tools
+        harper
+        osu-lazer-bin
     ];
 }

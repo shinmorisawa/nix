@@ -16,6 +16,8 @@ return {
                 "jsonls",
                 "pyright",
                 "tailwindcss",
+                "harper_ls",
+                "clangd"
             },
         })
 

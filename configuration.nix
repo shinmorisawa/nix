@@ -17,6 +17,7 @@
         ./modules/settings.nix
         ./modules/users.nix
         ./modules/virtualization.nix
+        ./modules/yggdrasil.nix
         ./modules/xdg.nix
     ];
 }

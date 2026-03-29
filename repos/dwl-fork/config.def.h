@@ -184,13 +184,10 @@ static const Executables executables = {
             .args = (const char*[]) { "mpdscribble", NULL }, .env = (const char*[]) { NULL }
         },
         {
-            .args = (const char*[]) { "/home/shin/.local/bin/fcitx5.sh", NULL }, .env = (const char*[]) { NULL }
-        },
-        {
             .args = (const char*[]) { "waybar", NULL }, .env = (const char*[]) { NULL }
         }
     },
-    5
+    4
 };
 
 static const Envvars env = {
