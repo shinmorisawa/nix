@@ -1,4 +1,4 @@
-{ ... }:
+{ config, pkgs, lib, ... }:
 
 {
     nix.gc = {
@@ -9,10 +9,10 @@
     nix.optimise.automatic = true;
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.rocmSupport = true;
     nixpkgs.config.permittedInsecurePackages = [
         "libsoup-2.74.3"
     ];
-    nixpkgs.config.rocmSupport = true;
 
     system.stateVersion = "25.11";
 }

@@ -17,7 +17,8 @@ return {
                 "pyright",
                 "tailwindcss",
                 "harper_ls",
-                "clangd"
+                "clangd",
+                "zls"
             },
         })
 

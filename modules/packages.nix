@@ -63,10 +63,16 @@
         pkg-config
         tinyxml-2
         tinyxml
-        blender
+        pkgsRocm.blender
         whois
         clang-tools
         harper
-        osu-lazer-bin
+        zig
+        gradle
+        gpac
+        picard
+        nasm
+        llvmPackages.bintools
+        file
     ];
 }

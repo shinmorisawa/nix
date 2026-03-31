@@ -11,4 +11,8 @@
         enable = true;
         pulse.enable = true;
     };
+
+    security.sudo.extraConfig = ''
+        Defaults insults
+    '';
 }
