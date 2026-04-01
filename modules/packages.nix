@@ -74,5 +74,6 @@
         nasm
         llvmPackages.bintools
         file
+        crosspipe
     ];
 }
