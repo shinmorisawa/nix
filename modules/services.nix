@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+    services.fstrim.enable = false;
+
     services.printing.enable = true;
     services.flatpak.enable = true;
 

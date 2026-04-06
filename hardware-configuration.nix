@@ -4,33 +4,33 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+    imports =
+        [ (modulesPath + "/installer/scan/not-detected.nix")
+        ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+    boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+    boot.initrd.kernelModules = [ "amdgpu" ];
+    boot.kernelModules = [ "kvm-amd" ];
+    boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
+    fileSystems."/" =
     { device = "/dev/disk/by-uuid/614a1abf-b3d4-47d0-8621-4e5153645285";
-      fsType = "ext4";
+        fsType = "ext4";
     };
 
-  fileSystems."/boot" =
+    fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/67E3-17ED";
-      fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
+        fsType = "vfat";
+        options = [ "fmask=0077" "dmask=0077" ];
     };
-  fileSystems."/home/shin/hd" =
+    fileSystems."/home/shin/hd" =
     { device = "/dev/disk/by-uuid/035a9c73-0ef2-4be1-8dc7-3093f4a2ea7a";
-      fsType = "btrfs";
-      options = [ "rw" "relatime" "space_cache=v2" "subvol=/" "noauto" "nofail" "x-systemd.automount" "defaults" "x-systemd.device-timeout=3" ];
+        fsType = "btrfs";
+        options = [ "rw" "relatime" "space_cache=v2" "subvol=/" "noauto" "nofail" "x-systemd.automount" "defaults" "x-systemd.device-timeout=3" ];
     };
 
-  swapDevices = [ ];
+    swapDevices = [ ];
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+    hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

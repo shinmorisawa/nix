@@ -24,7 +24,12 @@
         XCURSOR_THEME = "Drop-WhiteRinal";
         XCURSOR_SIZE = "32";
         WLR_DEBUG = "1";
+        NPM_CONFIG_PREFIX = "$HOME/.npm-global";
     };
+
+    home.sessionPath = [
+        "$HOME/.npm-global/bin"
+    ];
 
 #home.packages = with pkgs; {
 #    prismlauncher
@@ -113,6 +118,28 @@
     };
 
     xdg.configFile."nvim".source = ./../../config/nvim;
+
+    programs.cava = {
+        enable = true;
+        settings = {
+            general.framerate = 165;
+            general.bar_width = 3;
+            general.bar_spacing = 0;
+            input.method = "pipewire";
+            output = {
+                channels = "mono";
+                mono_option = "average";
+            };
+            smoothing.noise_reduction = 20;
+        };
+    };
+
+    programs.librewolf = {
+        enable = true;
+        settings = {
+            "webgl.disabled" = false;
+        };
+    };
 
     services.mako = {
         enable = true;

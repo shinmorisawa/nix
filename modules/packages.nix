@@ -2,6 +2,7 @@
 
 {
     environment.systemPackages = with pkgs; [
+        mesa
         vim
         wget
         neovim
@@ -75,5 +76,8 @@
         llvmPackages.bintools
         file
         crosspipe
+        jetbrains.idea
+        ollama-rocm
+        deno
     ];
 }
