@@ -15,6 +15,7 @@
         "custom/cava"
     ],
     "modules-right": [
+        "custom/reload",
         "idle_inhibitor",
         "cpu",
         "memory",
@@ -183,5 +184,9 @@
     "custom/dnd": {
         "exec": "$HOME/.config/waybar/dnd.sh",
         "format": "{}"
+    },
+    "custom/reload": {
+        "on-click": "$HOME/.config/waybar/scripts/reload.sh",
+        "format": "󰑓"
     }
 }

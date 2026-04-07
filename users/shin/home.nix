@@ -27,9 +27,7 @@
         NPM_CONFIG_PREFIX = "$HOME/.npm-global";
     };
 
-    home.sessionPath = [
-        "$HOME/.npm-global/bin"
-    ];
+    home.sessionPath = [ "/home/shin/.npm-global/bin" ];
 
 #home.packages = with pkgs; {
 #    prismlauncher
@@ -70,6 +68,15 @@
                 gcc
                 sqlite
                 yaml-language-server
+        ];
+        plugins = with pkgs.vimPlugins; [
+            (nvim-treesitter.withPlugins (p: [
+                p.c p.lua p.nix p.rust
+                p.typescript p.javascript
+                p.tsx p.html p.css
+                p.json p.yaml p.bash
+                p.markdown p.svelte
+            ]))
         ];
     };
 

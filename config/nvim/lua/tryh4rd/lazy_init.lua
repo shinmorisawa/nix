@@ -1,4 +1,4 @@
-local lazypath = vim.fn.stdpath("data") .. "lua/tryh4rd/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -13,5 +13,7 @@ vim.opt.rtp:prepend(lazypath)
  
 require("lazy").setup({
     spec = "tryh4rd.lazy",
-    change_detection = { notify = false }
+    change_detection = { notify = false },
+    root = vim.fn.stdpath("data") .. "/lazy",
+    lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
 })

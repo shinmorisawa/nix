@@ -74,11 +74,17 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
-#mpd,
+#mpd {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0 10px;
+    color: #ffffff;
+}
+
 #custom-cava {
     background-color: rgba(0, 0, 0, 0);
     padding: 0 10px;
     color: #ffffff;
+    font-size: 8px;
 }
 
 #workspaces {
