@@ -81,5 +81,24 @@
         deno
         kicad
         imagemagick
+        SDL2
+        SDL2_image
+        SDL2_ttf
+        libGL
+        openal
+        pkgsCross.mingwW64.buildPackages.gcc
+        pkgsCross.mingwW64.windows.mcfgthreads
+        ngrok
+        qbittorrent
+        mtr
+        slurp
+        swaybg
+        wl-clipboard
+        openrgb-with-all-plugins
+        fontconfig
+        usbmuxd
+        rustup
+        rustc
+        cargo
     ];
 }

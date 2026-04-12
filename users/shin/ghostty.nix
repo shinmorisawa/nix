@@ -12,7 +12,7 @@
             foreground = "ffffff";
             font-size = "11.25";
             theme = "tokyodark";
-            background-opacity = "1.0";
+            background-opacity = "0.5";
         };
     };
 

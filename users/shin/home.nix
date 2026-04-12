@@ -8,6 +8,7 @@
         ./rofi.nix
         ./mpd.nix
         ./themes.nix
+        ./nvim.nix
     ];
 
 
@@ -16,9 +17,8 @@
     home.stateVersion = "25.11";
 
     home.sessionVariables = {
-        XDG_CURRENT_DESKTOP = "wlroots";
+        XDG_CURRENT_DESKTOP = "sway";
         XDG_SESSION_TYPE = "wayland";
-        XDG_SESSION_DESKTOP = "wlroots";
         WLR_NO_HARDWARE_CURSORS = "1";
         XCURSOR_PATH = "/home/shin/.local/share/icons";
         XCURSOR_THEME = "Drop-WhiteRinal";
@@ -29,10 +29,11 @@
 
     home.sessionPath = [ "/home/shin/.npm-global/bin" ];
 
-#home.packages = with pkgs; {
+
+#home.packages = with pkgs; [
 #    prismlauncher
 #    discord
-#};
+#];
 
     programs.fish = {
         enable = true;
@@ -55,29 +56,6 @@
             key = "8B8F8551938A9A71";
             signByDefault = true;
         };
-    };
-
-    programs.neovim = {
-        enable = true;
-        defaultEditor = true;
-        extraPackages = with pkgs; [
-            ripgrep
-                fd
-                lua-language-server
-                nil
-                gcc
-                sqlite
-                yaml-language-server
-        ];
-        plugins = with pkgs.vimPlugins; [
-            (nvim-treesitter.withPlugins (p: [
-                p.c p.lua p.nix p.rust
-                p.typescript p.javascript
-                p.tsx p.html p.css
-                p.json p.yaml p.bash
-                p.markdown p.svelte
-            ]))
-        ];
     };
 
     programs.starship = {
@@ -123,8 +101,6 @@
             };
         };
     };
-
-    xdg.configFile."nvim".source = ./../../config/nvim;
 
     programs.cava = {
         enable = true;

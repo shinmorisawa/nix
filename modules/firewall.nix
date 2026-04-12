@@ -8,6 +8,7 @@
             80
             443
             22
+            57423
         ];
 
         allowedUDPPorts = [

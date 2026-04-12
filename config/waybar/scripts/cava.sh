@@ -29,7 +29,8 @@ BEGIN {
         # convert 0-100 range to 0-255 scale
         v = i
         # format as #RRGGBB (grayscale means R=G=B)
-        colors[i] = sprintf("#%02x%02x%02x", v, v, v)
+        if (v == 0) v = 1
+        colors[i] = sprintf("#FFFFFF%02x", v)
     }
 }
 

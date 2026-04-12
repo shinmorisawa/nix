@@ -185,9 +185,12 @@ static const Executables executables = {
         },
         {
             .args = (const char*[]) { "waybar", NULL }, .env = (const char*[]) { NULL }
+        },
+        {
+            .args = (const char*[]) { "swaybg", "-i", "~/nix-config/assets/wallpaper/moon.jpg", "-m", "fill", NULL }, .env = (const char*[]) { NULL }
         }
     },
-    4
+    5
 };
 
 static const Envvars env = {
