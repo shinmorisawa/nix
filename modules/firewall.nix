@@ -14,6 +14,8 @@
         allowedUDPPorts = [
             443
         ];
+
+        logRefusedConnections = false;
     };
 
     networking.firewall.interfaces."wlp4s0" = {

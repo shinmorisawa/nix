@@ -55,7 +55,9 @@ in
             custom_highlights = function(highlights, palette) 
                 return {
                     iblNormal = { fg = palette.bg1 },
-                    iblScope = { fg = palette.blue }
+                    iblScope = { fg = palette.blue },
+                    NotifyBackground = { bg = palette.black },
+                    StatusLine = { bg = "#000000" }
                 }
             end,
         })
