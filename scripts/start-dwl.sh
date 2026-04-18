@@ -9,4 +9,4 @@ export XCURSOR_THEME=Drop-WhiteRinal
 export XCURSOR_SIZE=32
 export WLR_DEBUG=1
 
-exec /home/shin/clone/dwl/dwl -d 2>&1 | tee /tmp/dwl.log
+exec dwl -s bash -c 'waybar & swaybg -m fill -i ~/nix-config/assets/wallpaper/moon.jpg'

@@ -100,5 +100,8 @@
         rustup
         rustc
         cargo
+        dwarf-fortress
+        dwarf-fortress-packages.dwarf-therapist
+        dfhack
     ];
 }

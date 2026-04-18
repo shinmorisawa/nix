@@ -20,6 +20,7 @@
         ./modules/nginx.nix
         ./modules/yggdrasil.nix
         ./modules/xdg.nix
+        ./modules/hostapd.nix
 
         ./modules/firewall.nix
         ./modules/fontconfig.nix

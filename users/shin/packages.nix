@@ -5,7 +5,6 @@
         chromium
         vesktop
         thunderbird
-        mpv
         ffmpeg
         obs-studio
         inkscape

@@ -15,7 +15,7 @@ source = auto
 method = raw
 raw_target = /dev/stdout
 data_format = ascii
-ascii_max_range = 255
+ascii_max_range = 65535 
 channels = mono
 mono_option = average
 [smoothing]
@@ -30,7 +30,7 @@ BEGIN {
         v = i
         # format as #RRGGBB (grayscale means R=G=B)
         if (v == 0) v = 1
-        colors[i] = sprintf("#FFFFFF%02x", v)
+        colors[i] = sprintf("#FFFFFF")
     }
 }
 
@@ -41,10 +41,10 @@ BEGIN {
     for (i = 1; i <= n; i++) {
         if (a[i] ~ /^[0-9]+$/) {
             v = a[i] + 0
-            if (v > 255) v = 255
+            if (v > 65535) v = 65535
             
             # wrap each bar in a span with its grayscale color
-            out = out "<span foreground=\"" colors[v] "\">" char "</span>"
+            out = out "<span foreground=\"#FFFFFF\" alpha=\"" v "\" >" char "</span>"
         }
     }
     # wrap the whole thing to prevent waybar from freaking out over 300 spans
