@@ -30,8 +30,8 @@
             name = "rocm-combined";
             paths = with pkgs.rocmPackages; [
                 rocblas
-                    hipblas
-                    clr
+                hipblas
+                clr
             ];
         };
     in [

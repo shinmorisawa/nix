@@ -48,8 +48,9 @@ in
             noice-nvim
             nui-nvim
             nvim-notify
+            oil-nvim
         ];
-        extraLuaConfig = ''
+        initLua = ''
         require("tokyodark").setup({
             transparent_background = true,
             custom_highlights = function(highlights, palette) 
@@ -57,7 +58,6 @@ in
                     iblNormal = { fg = palette.bg1 },
                     iblScope = { fg = palette.blue },
                     NotifyBackground = { bg = palette.black },
-                    StatusLine = { bg = "#000000" }
                 }
             end,
         })
@@ -97,10 +97,46 @@ in
         vim.keymap.set("n", "<leader>gf", function() neogit.open({ "fetch" }) end, { noremap=true, silent=true, buffer=bufnr })
         vim.keymap.set("n", "<leader>gd", function() neogit.open({ "diff" }) end, { noremap=true, silent=true, buffer=bufnr })
 
+        local p = require("tokyodark.palette")
+        local colors = {
+            bg = p.black,
+            fg = p.fg,
+            red = p.red,
+            green = p.green,
+            yellow = p.yellow,
+            blue = p.blue,
+            purple = p.purple,
+            cyan = p.cyan,
+            grey = p.grey,
+        }
+
+        local tokyo_dark = {
+            inactive = {
+                a = { fg = colors.grey, bg = colors.bg, gui = "bold" },
+                b = { fg = colors.grey, bg = colors.bg },
+                c = { fg = colors.grey, bg = colors.bg },
+                x = { fg = colors.grey, bg = colors.bg },
+                y = { fg = colors.grey, bg = colors.bg },
+                z = { fg = colors.grey, bg = colors.bg },
+            },
+            normal = {
+                a = { fg = colors.bg, bg = colors.green, gui = "bold" },
+                b = { fg = colors.fg, bg = colors.bg },
+                c = { fg = colors.fg, bg = colors.bg },
+                x = { fg = colors.fg, bg = colors.bg },
+                y = { fg = colors.fg, bg = colors.bg },
+                z = { fg = colors.bg, bg = colors.green, gui = "bold" },
+            },
+            visual = { a = { fg = colors.bg, bg = colors.purple, gui = "bold" } },
+            replace = { a = { fg = colors.bg, bg = colors.red, gui = "bold" } },
+            insert = { a = { fg = colors.bg, bg = colors.blue, gui = "bold" } },
+            command = { a = { fg = colors.bg, bg = colors.yellow, gui = "bold" } },
+        }
+
         require('lualine').setup {
             options = {
                 icons_enabled = true,
-                theme = 'tokyodark',
+                theme = tokyo_dark,
                 component_separators = { left = '', right = ''},
                 section_separators = { left = '', right = ''},
                 disabled_filetypes = {
@@ -120,8 +156,7 @@ in
                 lualine_a = {'mode'},
                 lualine_b = {'branch', 'diff', 'diagnostics'},
                 lualine_c = {'filename'},
-                lualine_w = {'lsp_status'},
-                lualine_x = {'encoding', 'fileformat', 'filetype'},
+                lualine_x = {'lsp_status', 'encoding', 'fileformat', 'filetype'},
                 lualine_y = {'progress'},
                 lualine_z = {'location'}
             },
@@ -266,6 +301,12 @@ in
         require("notify").setup({
             fps = 165,
         })
+
+        require("oil").setup({
+            default_file_explorer = true
+        })
         '';
+        withRuby = false;
+        withPython3 = false;
     };
 }
