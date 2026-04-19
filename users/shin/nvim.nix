@@ -49,6 +49,8 @@ in
             nui-nvim
             nvim-notify
             oil-nvim
+            smear-cursor-nvim
+            neoscroll-nvim
         ];
         initLua = ''
         require("tokyodark").setup({
@@ -89,13 +91,15 @@ in
         local telescope = require("telescope.builtin")
         local neogit = require("neogit")
 
-        vim.keymap.set("n", "<leader>f", telescope.find_files, { noremap=true, silent=true, buffer=bufnr })
-        vim.keymap.set("n", "<leader>p", "\"_dP", { noremap=true, silent=true, buffer=bufnr })
-        vim.keymap.set("n", "<leader>q", vim.cmd.qa, { noremap=true, silent=true, buffer=bufnr })
-        vim.keymap.set("n", "<leader>gc", function() neogit.open({ "commit" }) end, { noremap=true, silent=true, buffer=bufnr })
-        vim.keymap.set("n", "<leader>ga", function() neogit.open({ "stash" }) end, { noremap=true, silent=true, buffer=bufnr })
-        vim.keymap.set("n", "<leader>gf", function() neogit.open({ "fetch" }) end, { noremap=true, silent=true, buffer=bufnr })
-        vim.keymap.set("n", "<leader>gd", function() neogit.open({ "diff" }) end, { noremap=true, silent=true, buffer=bufnr })
+        vim.keymap.set("n", "<leader>f", telescope.find_files, { noremap=true, silent=true, })
+        vim.keymap.set("n", "<leader>p", "\"_dP", { noremap=true, silent=true, })
+        vim.keymap.set("n", "<leader>q", vim.cmd.qa, { noremap=true, silent=true, })
+        vim.keymap.set("n", "<leader>gc", function() neogit.open({ "commit" }) end, { noremap=true, silent=true, })
+        vim.keymap.set("n", "<leader>ga", function() neogit.open({ "stash" }) end, { noremap=true, silent=true, })
+        vim.keymap.set("n", "<leader>gf", function() neogit.open({ "fetch" }) end, { noremap=true, silent=true, })
+        vim.keymap.set("n", "<leader>gd", function() neogit.open({ "diff" }) end, { noremap=true, silent=true, })
+
+        require("nvim-treesitter").setup()
 
         local p = require("tokyodark.palette")
         local colors = {
@@ -304,6 +308,21 @@ in
 
         require("oil").setup({
             default_file_explorer = true
+        })
+
+        require("smear_cursor").setup({
+            opts = {
+                smear_insert_mode = true,
+                time_interval = 1,
+                stiffness = 0.8,
+                trailing_stiffness = 0.3,
+                stiffness_insert_mode = 0.7,
+                damping = 0.95
+            },
+        })
+
+        require("neoscroll").setup({
+
         })
         '';
         withRuby = false;
