@@ -8,7 +8,6 @@
         ./rofi.nix
         ./mpd.nix
         ./themes.nix
-        ./nvim.nix
         ./mpv.nix
     ];
 

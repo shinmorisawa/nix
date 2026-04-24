@@ -23,5 +23,7 @@
 
         ./modules/firewall.nix
         ./modules/fontconfig.nix
+
+        ./modules/webssh.nix
     ];
 }

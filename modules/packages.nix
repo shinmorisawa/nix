@@ -1,11 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, myNeovim, ... }:
 
 {
     environment.systemPackages = with pkgs; [
         mesa
         vim
         wget
-        neovim
         git
         ghostty
         librewolf
@@ -103,5 +102,7 @@
         dwarf-fortress
         dwarf-fortress-packages.dwarf-therapist
         dfhack
+        lmms
+        myNeovim
     ];
 }
