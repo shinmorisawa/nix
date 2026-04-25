@@ -33,11 +33,18 @@ pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
     luaRcContent = ''
     require("tokyodark").setup({
         transparent_background = false,
-        custom_highlights = function(highlights, palette) 
+        custom_highlights = function(highlights, p) 
             return {
-                iblNormal = { fg = palette.bg1 },
-                iblScope = { fg = palette.blue },
-                NotifyBackground = { bg = palette.black },
+                iblNormal = { fg = p.bg1 },
+                iblScope = { fg = p.blue },
+                NotifyBackground = { bg = p.black },
+                Normal = { bg = p.black, fg = p.fg },
+                NormalNC = { bg = p.black, fg = p.fg },
+                NormalSB = { bg = p.black, fg = p.fg },
+                NormalFloat = { bg = p.black, fg = p.fg },
+                NormalTerminal = { bg = p.black, fg = p.fg },
+                Terminal = { bg = p.black, fg = p.fg },
+                EndOfBuffer = { bg = p.black, fg = p.fg },
             }
         end,
     })
@@ -308,7 +315,7 @@ pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
 
     wrapperArgs = with pkgs; [
         "--suffix" "PATH" ":"
-            "${pkgs.lib.makeBinPath [
+        "${pkgs.lib.makeBinPath [
             ripgrep
             fd
             lua-language-server

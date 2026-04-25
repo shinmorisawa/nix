@@ -16,7 +16,7 @@
             domain = "tryh4rd.dev";
             extraDomainNames = [ "*.tryh4rd.dev" "*.ygg.tryh4rd.dev" ];
             dnsProvider = "cloudflare";
-            credentialsFile = "/var/lib/secrets/acme-cloudflare.env";
+            environmentFile = "/var/lib/secrets/acme-cloudflare.env";
 
             group = "nginx";
         };
@@ -135,6 +135,22 @@
             forceSSL = true;
             useACMEHost = "tryh4rd.dev";
             locations."/".proxyPass = "http://localhost:5173";
+        };
+
+        "ssh.tryh4rd.dev" = {
+            forceSSL = true;
+            useACMEHost = "tryh4rd.dev";
+            locations."/" = {
+                proxyPass = "http://localhost:7681";
+                proxyWebsockets = true;
+                extraConfig = ''
+                    proxy_read_timeout 600s;
+                    proxy_send_timeout 600s;
+
+                    proxy_set_header Upgrade $http_upgrade;
+                    proxy_set_header Connection "upgrade";
+                '';
+            };
         };
     };
 }
