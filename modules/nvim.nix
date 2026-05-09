@@ -32,7 +32,7 @@ pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
 
     luaRcContent = ''
     require("tokyodark").setup({
-        transparent_background = false,
+        transparent_background = true,
         custom_highlights = function(highlights, p) 
             return {
                 iblNormal = { fg = p.bg1 },

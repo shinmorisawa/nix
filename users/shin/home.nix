@@ -29,6 +29,107 @@
 
     home.sessionPath = [ "/home/shin/.npm-global/bin" ];
 
+    wayland.windowManager.mango = {
+        enable = true;
+        settings = ''
+            exec-once=waybar
+            exec-once=mako
+            exec-once=mpd-discord-rpc
+            exec-once=fcitx5 -d
+            monitorrule=serial:0x01010101,make:LG Electronics,model:22EA63,width:1920,height:1080,refresh:60,rr:3,x:1920,y:0
+            monitorrule=serial:0x000028FB,make:LG Electronics,model:LG ULTRAGEAR,width:1920,height:1080,refresh:165,rr:0,vrr:1,x:0,y:0
+            blur=1
+            blur_layer=1
+            blur_params_radius=8
+            blur_params_num_passes=2
+            borderpx=0
+            gappih=4
+            gappiv=4
+            gappoh=8
+            gappov=8
+
+            animation_type_open=zoom
+            animation_type_close=zoom
+            layer_animation_type_open=slide
+            layer_animation_type_close=slide
+            animation_duration_move=200
+            animation_duration_open=100
+            animation_duration_tag=100
+            animation_duration_close=200
+            animation_duration_focus=0
+            animation_curve_open=0.22,1,0.36,1
+            animation_curve_move=0.22,1,0.36,1
+            animation_curve_tag=0.22,1,0.36,1
+            animation_curve_close=0.22,1,0.36,1
+            animation_curve_focus=0.22,1,0.36,1
+            animation_curve_opafadein=0.22,1,0.36,1
+            animation_curve_opafadeout=0.5,0.5,0.5,0.5
+
+            border_radius=16
+            rootcolor=0x000000ff
+
+            cursor_size=32
+            cursor_theme=Drop-WhiteRinal
+
+            bind=SUPER,t,spawn,ghostty
+            bind=SUPER,m,spawn,rofi -show drun -normal-window
+
+            bind=SUPER,h,focusstack,next
+            bind=SUPER,l,focusstack,prev
+            bind=SUPER+SHIFT,i,incnmaster,+1
+            bind=SUPER,d,incnmaster,-1
+
+            bind=SUPER,u,setmfact,-0.05
+            bind=SUPER,o,setmfact,+0.05
+            bind=SUPER,Return,zoom,0
+
+            bind=SUPER,i,killclient
+            bind=SUPER,v,togglefloating
+            bind=SUPER,f,togglefullscreen
+            bind=SUPER,Tab,view,0
+
+            bind=SUPER,z,setlayout,tile
+            bind=SUPER,x,setlayout,floating
+            bind=SUPER,c,setlayout,scroller
+            bind=SUPER,space,setlayout,next
+
+            bind=SUPER,comma,focusmon,left
+            bind=SUPER,period,focusmon,right
+            bind=SUPER+SHIFT,less,tagmon,left
+            bind=SUPER+SHIFT,greater,tagmon,right
+
+            bind=SUPER,1,view,1
+            bind=SUPER,2,view,2
+            bind=SUPER,3,view,3
+            bind=SUPER,4,view,4
+            bind=SUPER,5,view,5
+            bind=SUPER,6,view,6
+            bind=SUPER,7,view,7
+            bind=SUPER,8,view,8
+            bind=SUPER,9,view,9
+
+            bind=SUPER+SHIFT,1,tag,1
+            bind=SUPER+SHIFT,2,tag,2
+            bind=SUPER+SHIFT,3,tag,3
+            bind=SUPER+SHIFT,4,tag,4
+            bind=SUPER+SHIFT,5,tag,5
+            bind=SUPER+SHIFT,6,tag,6
+            bind=SUPER+SHIFT,7,tag,7
+            bind=SUPER+SHIFT,8,tag,8
+            bind=SUPER+SHIFT,9,tag,9
+
+            bind=SUPER,0,view,0
+            bind=SUPER+SHIFT,parenright,tag,0
+
+            bind=SUPER+SHIFT,q,quit
+            bind=CTRL+ALT,BackSpace,quit
+            xkb_rules_options=caps:escape
+        '';
+        autostart_sh = ''
+
+        '';
+    };
+
 
 #home.packages = with pkgs; [
 #    prismlauncher

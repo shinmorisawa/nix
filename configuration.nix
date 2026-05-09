@@ -12,6 +12,7 @@
         ./modules/packages.nix
         ./modules/programs.nix
         ./modules/services.nix
+        ./modules/i18n.nix
 
         ./modules/users.nix
         ./modules/settings.nix

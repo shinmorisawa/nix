@@ -8,11 +8,11 @@
         enableFishIntegration = true;
 
         settings = {
-            background = "000000";
+            background = "06080a";
             foreground = "ffffff";
             font-size = "11.25";
             theme = "tokyodark";
-            background-opacity = "1";
+            background-opacity = "0.5";
         };
     };
 

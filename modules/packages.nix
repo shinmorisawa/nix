@@ -1,5 +1,11 @@
-{ config, pkgs, myNeovim, ... }:
+{ config, pkgs, myNeovim, inputs, ... }:
 
+let
+    stable = import inputs.nixpkgs-stable {
+        system = pkgs.system;
+        config.allowUnfree = true;
+    };
+in 
 {
     environment.systemPackages = with pkgs; [
         mesa
@@ -8,15 +14,15 @@
         git
         ghostty
         librewolf
-        (dwl.overrideAttrs
-            (
-                oldAttrs: {
-                    src = ./../repos/dwl-fork;
-                    buildInputs = oldAttrs.buildInputs ++ [ wlroots_0_19 ];
-                    patches = [];
-                }
-            )
-        )
+# (dwl.overrideAttrs
+#            (
+#                oldAttrs: {
+#                    src = ./../repos/dwl-fork;
+#                    buildInputs = oldAttrs.buildInputs ++ [ wlroots_0_19 ];
+#                    patches = [];
+#                }
+#            )
+#        )
         pavucontrol
         mpd
         btop
@@ -63,7 +69,6 @@
         pkg-config
         tinyxml-2
         tinyxml
-        pkgsRocm.blender
         whois
         clang-tools
         harper
@@ -104,5 +109,8 @@
         dfhack
         lmms
         myNeovim
+        ckan
+        stable.blender-hip
+        quickemu
     ];
 }
