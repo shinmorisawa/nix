@@ -3,10 +3,10 @@
 {
     users.users.shin = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "video" "networkmanager" "audio" "render" ]; # Enable ‘sudo’ for the user.
-            packages = with pkgs; [
+        extraGroups = [ "wheel" "video" "networkmanager" "audio" "render" "plugdev" ]; # Enable ‘sudo’ for the user.
+        packages = with pkgs; [
             tree
-            ];
+        ];
         shell = pkgs.fish;
         openssh.authorizedKeys.keys = [
             "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJFixXDg9u5dpHX9NS3+SJshRQiVRC7TiaL8XChk7oO/ ish-key"

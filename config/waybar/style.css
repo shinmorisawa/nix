@@ -5,7 +5,7 @@
 }
 
 window#waybar {
-    background-color: rgba(6, 8, 10, 0.7);
+    background-color: rgba(6, 8, 10, 0);
     color: white;
     transition-property: background-color;
     transition-duration: .5s;
@@ -103,26 +103,26 @@ button:hover {
 }
 
 .modules-right {
-    padding: 0 2px;
-    margin: 0px 5px 0 0;
-    border-radius: 32px;
-    background-color: rgba(0, 0, 0, 0.0);
+    padding: 0 4px;
+    margin: 0 5px 5px 0;
+    border-radius: 9999px;
+    background-color: rgba(6, 8, 10, 1.0);
     padding-left: 1px;
     padding-right: 1px;
 }
 
 .modules-left {
-    padding: 0 2px;
-    margin: 0px 0 0 5px;
-    border-radius: 32px;
-    background-color: rgba(0, 0, 0, 0.0);
+    padding: 0 4px;
+    margin: 0 0 5px 5px;
+    border-radius: 9999px;
+    background-color: rgba(6, 8, 10, 1.0);
 }
 
 .modules-center {
     padding: 0 12px;
-    margin: 0px 0 0 0;
-    border-radius: 32px;
-    background-color: rgba(0, 0, 0, 0.0);
+    margin: 0 0 5px 0;
+    border-radius: 9999px;
+    background-color: rgba(6, 8, 10, 1.0);
 }
 
 #battery {

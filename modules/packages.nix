@@ -110,7 +110,10 @@ in
         lmms
         myNeovim
         ckan
-        stable.blender-hip
+        pkgsRocm.blender
         quickemu
+        nmap
+        traceroute
+        alsa-lib
     ];
 }

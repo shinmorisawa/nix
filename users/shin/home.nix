@@ -124,6 +124,8 @@
             bind=SUPER+SHIFT,q,quit
             bind=CTRL+ALT,BackSpace,quit
             xkb_rules_options=caps:escape
+
+            drag_tile_to_tile=1
         '';
         autostart_sh = ''
 

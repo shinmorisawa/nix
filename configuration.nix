@@ -26,5 +26,6 @@
         ./modules/fontconfig.nix
 
         ./modules/webssh.nix
+        ./modules/udev.nix
     ];
 }

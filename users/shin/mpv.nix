@@ -30,7 +30,7 @@ in
             demuxer-cache-duration = 600;
             demuxer-max-bytes = "16GiB";
             read-cache-secs = 600;
-            glsl-shaders = "${anime4k}/share/anime4k/Anime4K_Clamp_Highlights.glsl:${anime4k}/share/anime4k/Anime4K_Restore_CNN_VL.glsl:${anime4k}/share/anime4k/Anime4K_Upscale_CNN_x2_VL.glsl:${anime4k}/share/anime4k/Anime4K_AutoDownscalePre_x2.glsl:${anime4k}/share/anime4k/Anime4K_AutoDownscalePre_x4.glsl:${anime4k}/share/anime4k/Anime4K_Upscale_CNN_x2_M.glsl";
+            glsl-shaders = "${anime4k}/share/anime4k/Restore/Anime4K_Clamp_Highlights.glsl:${anime4k}/share/anime4k/Restore/Anime4K_Restore_CNN_VL.glsl:${anime4k}/share/anime4k/Upscale/Anime4K_Upscale_CNN_x2_VL.glsl:${anime4k}/share/anime4k/Anime4K_AutoDownscalePre_x2.glsl:${anime4k}/share/anime4k/Anime4K_AutoDownscalePre_x4.glsl:${anime4k}/share/anime4k/Anime4K_Upscale_CNN_x2_M.glsl";
         };
     };
 }
