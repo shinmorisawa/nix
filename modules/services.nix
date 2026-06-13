@@ -7,7 +7,6 @@
     services.flatpak.enable = true;
 
     services.libinput.enable = true;
-    services.openssh.enable = true;
 
     services.pipewire = {
         enable = true;
@@ -17,4 +16,16 @@
     security.sudo.extraConfig = ''
         Defaults insults
     '';
+
+    services.openssh = {
+        enable = true;
+        settings = {
+            PasswordAuthentication = false;
+            KbdInteractiveAuthentication = false;
+
+            PermitRootLogin = "prohibit-password";
+        };
+    };
+
+    services.speechd.enable = false; # why was this in here?
 }

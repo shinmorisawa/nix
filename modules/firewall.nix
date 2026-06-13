@@ -9,10 +9,12 @@
             443
             22
             57423
+            25565
         ];
 
         allowedUDPPorts = [
             443
+            25565
         ];
 
         logRefusedConnections = false;
