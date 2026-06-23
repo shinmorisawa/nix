@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
 
     meta = with lib; {
         description = "anime shaders";
-        homepag = "https://github.com/bloc97/Anime4K";
+        homepage = "https://github.com/bloc97/Anime4K";
         license = licenses.mit;
         platforms = platforms.all;
     };

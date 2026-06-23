@@ -58,16 +58,20 @@ in
 
     systemd.services.ttyd = {
         after = [ "load-dev-container.service" ];
+        environment = {
+            LD_LIBRARY_PATH = "${pkgs.libwebsockets}/lib";
+        };
     };
 
     systemd.services.load-dev-container = {
         description = "load";
         after = [ "docker.service" ];
-        wantedBy = [ "multi-user.target" ];
+        wantedBy = [ "default.target" ];
         serviceConfig = {
             Type = "oneshot";
             RemainAfterExit = true;
             ExecStart = "${pkgs.bash}/bin/bash -c '${pkgs.docker}/bin/docker load < ${devImage}'";
+            Nice = "19";
         };
     };
 }

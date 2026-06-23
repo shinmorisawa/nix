@@ -115,5 +115,6 @@ in
         nmap
         traceroute
         alsa-lib
+        godot-mono
     ];
 }

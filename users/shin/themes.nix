@@ -2,34 +2,44 @@
 
 {
     xdg.dataFile."icons/Drop-WhiteRinal".source = ./../../assets/Drop-WhiteRinal;
-
     home.file.".themes/Reversal-Dark".source = ./../../assets/Reversal-Dark;
 
-    xdg.configFile."gtk-4.0/settings.ini".text = ''
-[Settings]
-gtk-application-prefer-dark-theme=1
-gtk-im-module=fcitx
-gtk-font-name=SF Pro Text 11
-    '';
+    gtk = {
+        enable = true;
 
-    xdg.configFile."gtk-3.0/settings.ini".text = ''
-[Settings]
-gtk-theme-name=Reversal-Dark
-gtk-icon-theme-name=Reversal-Dark
-gtk-toolbar-style=GTK_TOOLBAR_ICONS
-gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-gtk-button-images=0
-gtk-menu-images=0
-gtk-enable-event-sounds=1
-gtk-enable-input-feedback-sounds=0
-gtk-xft-antialias=1
-gtk-xft-hinting=1
-gtk-xft-hintstyle=hintslight
-gtk-xft-rgba=rgb
-gtk-application-prefer-dark-theme=1
-gtk-im-module=fcitx
-gtk-font-name=SF Pro Text 11
-gtk-cursor-theme-name=Breeze_Black
-gtk-cursor-theme-size=24
-    '';
+        font = {
+            name = "JetBrains Mono Nerd Font";
+            size = 11;
+        };
+
+        theme = {
+            name = "Reversal-Dark";
+        };
+
+        iconTheme = {
+            name = "Reversal-Dark";
+        };
+
+        cursorTheme = {
+            name = "Breeze_Black";
+            size = 24;
+        };
+
+        gtk3.extraConfig = {
+            gtk-application-prefer-dark-theme = 1;
+            gtk-im-module = "fcitx";
+            gtk-toolbar-style = "GTK_TOOLBAR_ICONS";
+            gtk-toolbar-icon-size = "GTK_ICON_SIZE_LARGE_TOOLBAR";
+            gtk-button-images = 0;
+            gtk-menu-images = 0;
+        };
+
+        gtk4.extraConfig = {
+            gtk-application-prefer-dark-theme = 1;
+            gtk-im-module = "fcitx";
+        };
+    };
+
+    xdg.configFile."gtk-4.0/assets".source = ./../../assets/Reversal-Dark/gtk-4.0/assets;
+    xdg.configFile."gtk-4.0/gtk.css".source = ./../../assets/Reversal-Dark/gtk-4.0/gtk.css;
 }

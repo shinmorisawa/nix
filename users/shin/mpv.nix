@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  anime4k = pkgs.callPackage ../../packages/anime4k.nix {};
+    anime4k = pkgs.callPackage ../../packages/anime4k.nix {};
 in 
 {
     programs.mpv = {

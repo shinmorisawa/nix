@@ -27,5 +27,7 @@
 
         ./modules/webssh.nix
         ./modules/udev.nix
+
+        ./modules/win98.nix
     ];
 }

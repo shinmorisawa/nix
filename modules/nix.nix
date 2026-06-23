@@ -12,6 +12,8 @@
     nixpkgs.config.rocmSupport = true;
     nixpkgs.config.permittedInsecurePackages = [
         "libsoup-2.74.3"
+        "librewolf-151.0.2-1"
+        "librewolf-unwrapped-151.0.2-1"
     ];
 
     system.stateVersion = "25.11";

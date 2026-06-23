@@ -47,11 +47,7 @@
             { addr = "[200:fe:9c30:f999:4:4:b3d9:1b]"; port = 80; }
             { addr = "[200:fe:9c30:f999:4:4:b3d9:1b]"; port = 443; ssl = true; } 
             ];
-            extraConfig = ''
-                ssl_certificate /var/lib/acme/tryh4rd.dev/fullchain.pem;
-            ssl_certificate_key /var/lib/acme/tryh4rd.dev/key.pem;
-            ssl_trusted_certificate /var/lib/acme/tryh4rd.dev/chain.pem;
-            '';
+            onlySSL = true;
             useACMEHost = "tryh4rd.dev";
             root = "/var/www/root-svelte-ygg";
             locations."/" = {
@@ -64,11 +60,7 @@
             { addr = "[200:fe:9c30:f999:4:4:b3d9:1b]"; port = 80; }
             { addr = "[200:fe:9c30:f999:4:4:b3d9:1b]"; port = 443; ssl = true; } 
             ];
-            extraConfig = ''
-                ssl_certificate /var/lib/acme/tryh4rd.dev/fullchain.pem;
-            ssl_certificate_key /var/lib/acme/tryh4rd.dev/key.pem;
-            ssl_trusted_certificate /var/lib/acme/tryh4rd.dev/chain.pem;
-            '';
+            onlySSL = true;
             useACMEHost = "tryh4rd.dev";
             root = "/var/www/files";
             locations."/".extraConfig = "autoindex on;";
