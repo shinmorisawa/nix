@@ -26,6 +26,15 @@
             ];
 
             PrivateKeyPath = "/var/lib/secrets/yggdrasil.key";
+
+            MulticastInterfaces = [
+                {
+                    Regex = ".*";
+                    Beacon = true;
+                    Listen = true;
+                    Port = 0;
+                }
+            ];
         };
     };
 }
