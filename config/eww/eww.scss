@@ -28,7 +28,7 @@ window#bar {
   margin: 0 5px 5px 0;
   border-radius: 9999px;
 
-  .cpu_module, .memory_module, .time_module, .pinger_module, .ctrl_module {
+  .cpu_module, .memory_module, .time_module {
     padding: 0 8px;
   }
 
@@ -42,23 +42,6 @@ window#bar {
 
   .time_module {
     padding-right: 0;
-  }
-
-  .pinger_module {
-    color: rgba(215, 166, 95, 1.0);
-
-  }
-
-  .ctrl_module {
-    padding-left: 0;
-  }
-
-  .ctrl_button {
-    padding: 0 4px;
-  }
-
-  .ctrl_content {
-    padding: 0 8px 0 0;
   }
 }
 
