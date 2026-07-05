@@ -3,6 +3,11 @@
  :initial "0:00"
  "date +%H:%M")
 
+(defpoll full_date
+ :interval "1s"
+ :initial "0:00"
+ "date +'%b %d'")
+
 (defpoll mpd_song
  :interval "0.5s"
  :initial "nil"
@@ -12,6 +17,14 @@
  :interval "0.5s"
  :initial ""
  "mpc status | awk 'NR==2 {if ($1 == \"[playing]\") print \"\"; else if ($1 == \"[paused]\") print \"\"; else print \"󰓛\"}'")
+
+(defpoll pinger
+ :interval "10s"
+ :initial "󰲛"
+ "ping -c 1 -W 1 1.1.1.1 2>/dev/null | awk -F '/' 'END {print $5}'")
+
+(defvar time_hover false)
+(defvar ctrl_open false)
 
 (deflisten cava_file
  :initial ""
@@ -44,7 +57,38 @@
  (box :class "memory_module" "${round(EWW_RAM.used_mem_perc, 0)}%"))
 
 (defwidget time_module []
- (box :class "time_module" time))
+ (eventbox
+  :onhover "${EWW_CMD} update time_hover=true"
+  :onhoverlost "${EWW_CMD} update time_hover=false"
+  :cursor "pointer"
+  (box :class "time_container" :orientation "h" :space-evenly false
+   (revealer
+    :transition "slideright"
+    :reveal time_hover
+    :duration "250ms"
+    (box :class "date_part" "${full_date}"))
+  (box :class "time_module"
+   time))))
+
+(defwidget pinger_module []
+ (box :class "pinger_module" "${round(pinger, 1)}ms"))
+
+(defwidget ctrl_module []
+ (box :class "ctrl_container" :orientation "h" :space-evenly false
+  (revealer
+   :transition "slideright"
+   :reveal ctrl_open
+   :duration "250ms"
+   (box :class "ctrl_content" :space-evenly false
+    (button :class "ctrl_button" :onclick "poweroff" "")
+    (button :class "ctrl_button" :onclick "reboot" "")
+    (button :class "ctrl_button" :onclick "pkill -u $USER" "󰈆")))
+  (eventbox
+   :cursor "pointer"
+   :onclick "${EWW_CMD} update ctrl_open=${!ctrl_open}"
+   (box :class "ctrl_module"
+    "${ctrl_open ? '' : ''}"))))
+
 
 ; left modules
 (defwidget mpd_module []
@@ -68,6 +112,8 @@
 
 (defwidget right []
  (box :class "modules_right" :space-evenly false :spacing 0
+  (ctrl_module)
+  (pinger_module)
   (cpu_module)
   (memory_module)
   (time_module)))
