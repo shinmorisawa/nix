@@ -1,0 +1,65 @@
+* { all: unset; }
+
+* {
+  font-family: "JetBrains Mono Nerd Font";
+  font-size: 14px;
+}
+
+window#bar {
+  background-color: transparent;
+
+}
+
+.bar-class {
+  background-color: transparent;
+}
+
+.blank_spacer {
+  background-color: rgba(6, 8, 10, 1.0);
+}
+
+// each module gets padding: 0 8px;
+// the pills themselves get what modules_right gets
+
+.modules_right {
+  background-color: rgba(6, 8, 10, 1.0);
+
+  padding: 4px 12px;
+  margin: 0 5px 5px 0;
+  border-radius: 9999px;
+
+  .cpu_module, .memory_module, .time_module {
+    padding: 0 8px;
+  }
+
+  .cpu_module {
+    color: rgba(149, 197, 97, 1.0);
+  }
+
+  .memory_module {
+    color: rgba(113, 153, 238, 1.0);
+  }
+
+  .time_module {
+    padding-right: 0;
+  }
+}
+
+.modules_left {
+  background-color: rgba(6, 8, 10, 1.0);
+  padding: 4px 12px;
+  margin: 0 0 5px 5px;
+  border-radius: 9999px;
+
+  .mpd_module {
+    padding-left: 0;
+    padding-right: 4px;
+  }
+}
+
+.modules_center {
+  background-color: rgba(6, 8, 10, 1.0);
+  padding: 4px 12px;
+  margin: 0 0 5px 0;
+  border-radius: 9999px;
+}

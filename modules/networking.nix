@@ -6,19 +6,13 @@
         networkmanager.enable = true;
 
         interfaces.enp5s0 = {
-            ipv6.addresses = [
-                {
-                    address = "240f:93:dd5:1::1";
-                    prefixLength = 64;
-                }
-                {
-                    address = "240f:93:dd5::1";
-                    prefixLength = 64;
-                }
-            ];
+            ipv6.addresses = [{
+                address = "240f:93:dd5:1::1";
+                prefixLength = 64;
+            }];
             ipv4.addresses = [{
                 address = "192.168.0.222";
-                prefixLength = 18;
+                prefixLength = 19;
             }];
         };
 

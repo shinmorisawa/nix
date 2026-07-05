@@ -33,7 +33,7 @@
         enable = true;
         settings = {
             exec-once = [
-                "waybar"
+                "eww open bar"
                 "mako"
                 "mpd-discord-rpc"
                 "fcitx5 -d"
@@ -259,11 +259,18 @@
             font = "SF Pro Text 12";
         };
     };
+
     services.mpdscribble = {
         enable = true;
         host = "127.0.0.1";
         port = 40220;
         package = pkgs.mpdscribble;
+        endpoints = {
+            "last.fm" = {
+                passwordFile = "/var/lib/secrets/lastfm.key";
+                username = "tryh4rd3rr";
+            };
+        };
     };
 
     programs.home-manager.enable = true;

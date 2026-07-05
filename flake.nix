@@ -36,6 +36,7 @@
                 myNeovim = myNeovimThing;
             };
             modules = [
+                ./deathstar/hardware-configuration.nix
                 ./configuration.nix
                 mango.nixosModules.mango {
                     programs.mango.enable = true;

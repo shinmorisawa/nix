@@ -3,7 +3,7 @@
 {
     users.users.shin = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "video" "networkmanager" "audio" "render" "plugdev" ]; # Enable ‘sudo’ for the user.
+        extraGroups = [ "wheel" "video" "networkmanager" "audio" "render" "plugdev" "gamemode" ]; # Enable ‘sudo’ for the user.
         packages = with pkgs; [
             tree
         ];

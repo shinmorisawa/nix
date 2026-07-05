@@ -1,0 +1,76 @@
+(defpoll time
+ :interval "1s"
+ :initial "0:00"
+ "date +%H:%M")
+
+(defpoll mpd_song
+ :interval "0.5s"
+ :initial "nil"
+ "mpc current")
+
+(defpoll mpd_play_pause
+ :interval "0.5s"
+ :initial ""
+ "mpc status | awk 'NR==2 {if ($1 == \"[playing]\") print \"\"; else if ($1 == \"[paused]\") print \"\"; else print \"󰓛\"}'")
+
+(deflisten cava_file
+ :initial ""
+ "cava -p ~/.config/eww/config.cava | ~/.config/eww/cava")
+
+(defwindow bar
+ :monitor 0
+ :geometry (geometry :x "0%"
+                     :y "0%"
+                     :width "100%"
+                     :height "40px"
+                     :anchor "bottom center")
+ :stacking "fg"
+ :exclusive true
+ :focusable false
+ (bar_layout))
+
+; main bar
+(defwidget bar_layout []
+ (box :class "bar-class" :orientation "h"
+  (box :class "left-container" :halign "start" (left))
+  (box :class "center-container" :halign "center" (center))
+  (box :class "right-container" :halign "end" (right))))
+
+; right modules
+(defwidget cpu_module []
+ (box :class "cpu_module" "${round(EWW_CPU.avg, 0)}%"))
+
+(defwidget memory_module []
+ (box :class "memory_module" "${round(EWW_RAM.used_mem_perc, 0)}%"))
+
+(defwidget time_module []
+ (box :class "time_module" time))
+
+; left modules
+(defwidget mpd_module []
+ (box :class "mpd_module" "${mpd_play_pause} ${mpd_song} "))
+
+; center modules
+(defwidget cava_module []
+ (box :class "cava_module"
+  (image
+   :path cava_file
+   :image-width 300
+   :image-height 22)))
+
+(defwidget left []
+ (box :class "modules_left" :space-evenly false :spacing 0
+  (mpd_module)))
+
+(defwidget center []
+ (box :class "modules_center" :space-evenly false :spacing 0
+  (cava_module)))
+
+(defwidget right []
+ (box :class "modules_right" :space-evenly false :spacing 0
+  (cpu_module)
+  (memory_module)
+  (time_module)))
+
+(defwidget blank_spacer []
+ (box :class "blank_spacer"))

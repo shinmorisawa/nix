@@ -12,8 +12,11 @@ stdenv.mkDerivation rec {
     };
 
     installPhase = ''
-        mkdir -p $out/share/anime4k
-        cp -r glsl/* $out/share/anime4k
+        runHook preInstall
+
+        install -Dm644 glsl/*/*.glsl -t $out
+        
+        runHook postInstall
     '';
 
     meta = with lib; {

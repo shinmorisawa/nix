@@ -1,0 +1,15 @@
+[general]
+framerate = 165
+bars = 100
+[input]
+method = pipewire
+source = auto
+[output]
+method = raw
+raw_target = /dev/stdout
+data_format = binary
+bit_depth = 16
+channels = mono
+mono_option = average
+[smoothing]
+noise_reduction = 10

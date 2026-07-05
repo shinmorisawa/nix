@@ -23,14 +23,13 @@ noise_reduction = 20
 EOF
 
 cava -p "$config_file" | awk -v char="$char" '
+# unused
 BEGIN {
-    # pre-calculate hex values 0-100 to save cpu cycles at 165fps
     for (i = 0; i <= 255; i++) {
-        # convert 0-100 range to 0-255 scale
-        v = i
-        # format as #RRGGBB (grayscale means R=G=B)
-        if (v == 0) v = 1
-        colors[i] = sprintf("#FFFFFF")
+        r = int(113 + (164 - 113) * (i - 1) / 254)
+        g = int(153 + (133 - 153) * (i - 1) / 254)
+        b = int(238 + (221 - 238) * (i - 1) / 254)
+        colors[i] = sprintf("#%02X%02X%02X", r, g, b)
     }
 }
 
@@ -44,7 +43,7 @@ BEGIN {
             if (v > 65535) v = 65535
             
             # wrap each bar in a span with its grayscale color
-            out = out "<span foreground=\"#FFFFFF\" alpha=\"" v "\" >" char "</span>"
+            out = out "<span foreground=\"#7199EE\" alpha=\"" v "\" >" char "</span>"
         }
     }
     # wrap the whole thing to prevent waybar from freaking out over 300 spans

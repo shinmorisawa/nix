@@ -1,9 +1,9 @@
 { pkgs, ... }:
 
 {
-    programs.waybar = {
+    programs.eww = {
         enable = true;
     };
 
-    xdg.configFile."waybar".source = ./../../config/waybar;
+    xdg.configFile."eww".source = ./../../config/eww;
 }
