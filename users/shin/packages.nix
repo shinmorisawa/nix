@@ -3,7 +3,6 @@
 {
     home.packages = with pkgs; [
         chromium
-        vesktop
         thunderbird
         ffmpeg
         obs-studio
@@ -24,5 +23,6 @@
         fortune
         sl
         waybar
+        discord-rpc
     ];
 }

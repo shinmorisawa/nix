@@ -14,6 +14,7 @@
         "libsoup-2.74.3"
         "librewolf-151.0.2-1"
         "librewolf-unwrapped-151.0.2-1"
+        "electron-40.10.5"
     ];
 
     system.stateVersion = "25.11";

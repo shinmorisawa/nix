@@ -11,12 +11,12 @@
 (defpoll mpd_song
  :interval "0.5s"
  :initial "nil"
- "mpc current")
+ "MPD_PORT=40220 mpc current")
 
 (defpoll mpd_play_pause
  :interval "0.5s"
  :initial ""
- "mpc status | awk 'NR==2 {if ($1 == \"[playing]\") print \"\"; else if ($1 == \"[paused]\") print \"\"; else print \"󰓛\"}'")
+ "MPD_PORT=40220 mpc status | awk 'NR==2 {if ($1 == \"[playing]\") print \"\"; else if ($1 == \"[paused]\") print \"\"; else print \"󰓛\"}'")
 
 (defpoll pinger
  :interval "10s"

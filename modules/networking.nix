@@ -4,6 +4,14 @@
     networking = {
         hostName = "deathstar";
         networkmanager.enable = true;
+        extraHosts = ''
+            127.0.0.1 openai.com chatgpt.com
+            127.0.0.1 api.openai.com
+            127.0.0.1 claude.ai anthropic.com
+            127.0.0.1 gemini.google.com
+            127.0.0.1 perplexity.api
+            127.0.0.1 copilot.microsoft.com
+        '';
 
         interfaces.enp5s0 = {
             ipv6.addresses = [{

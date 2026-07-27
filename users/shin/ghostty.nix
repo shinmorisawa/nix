@@ -9,7 +9,7 @@
 
         settings = {
             background = "06080a";
-            foreground = "ffffff";
+            foreground = "a0a8cd";
             font-size = "11.25";
             theme = "tokyodark";
             background-opacity = "0.5";

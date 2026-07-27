@@ -24,9 +24,9 @@
         };
 
         defaultFonts = {
-            sansSerif = [ "JetBrains Mono Nerd Font" "Apple Color Emoji" ];
-            serif     = [ "JetBrains Mono Nerd Font" "Apple Color Emoji" ];
-            monospace = [ "JetBrains Mono Nerd Font" "Apple Color Emoji" ];
+            sansSerif = [ "JetBrains Mono Nerd Font" "Noto Sans CJK JP" "Apple Color Emoji" ];
+            serif     = [ "JetBrains Mono Nerd Font" "Noto Serif CJK JP" "Apple Color Emoji" ];
+            monospace = [ "JetBrains Mono Nerd Font" "Noto Sans Mono CJK JP" "Apple Color Emoji" ];
         };
     };
 }

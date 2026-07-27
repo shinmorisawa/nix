@@ -40,5 +40,26 @@
         };
     };
 
+    programs.ncmpcpp = {
+        enable = true;
+        bindings = [
+            { command = "scroll_down"; key = "j"; }
+            { command = "scroll_up"; key = "k"; }
+            { command = "select_item"; key = "v"; }
+            { command = "play_item"; key = "enter"; }
+            { command = "add_selected_items"; key = "a"; }
+            { command = "delete_playlist_items"; key = "d"; }
+            { command = "play"; key = "space"; }
+            { command = "pause"; key = "space"; }
+            { command = "stop"; key = "space"; }
+            { command = "next"; key = "l"; }
+            { command = "previous"; key = "h"; }
+            { command = "seek_forward"; key = "L"; }
+            { command = "seek_backward"; key = "H"; }
+            { command = "volume_up"; key = "="; }
+            { command = "volume_down"; key = "-"; }
+        ];
+    };
+
     xdg.configFile."discord-rpc/config.toml".force = true;
 }

@@ -35,7 +35,7 @@
         enable = true;
         settings = {
             default_session = {
-                command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd mango";
+                command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd '${pkgs.dbus}/bin/dbus-run-session ${pkgs.mango}/bin/mango'";
                 user = "greeter";
             };
         };

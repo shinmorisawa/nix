@@ -116,5 +116,8 @@ in
         traceroute
         alsa-lib
         godot-mono
+        electrum
+        fontforge
+        man-pages
     ];
 }
