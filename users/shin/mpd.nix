@@ -15,6 +15,9 @@
 
         extraConfig = ''
             filesystem_charset "UTF-8"
+
+            mixramp_analyzer "yes"
+
             audio_output {
                 type "pipewire"
                 name "pipewire"

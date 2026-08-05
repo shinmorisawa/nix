@@ -119,5 +119,7 @@ in
         electrum
         fontforge
         man-pages
+        reaper
+        vital
     ];
 }

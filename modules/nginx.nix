@@ -31,7 +31,7 @@
             root = "/var/www/root-svelte";
 
             locations."/" = {
-                extraConfig = "try_files $uri $uri.html $uri/ =404;";
+                extraConfig = "try_files $uri $uri.html $uri/ /404.html;";
             };
 
             extraConfig = ''
@@ -96,6 +96,9 @@
             useACMEHost = "tryh4rd.dev";
             root = "/var/www/files";
             locations."/".extraConfig = "autoindex on;";
+            extraConfig = ''
+                charset utf-8;
+            '';
         };
 
         "js.tryh4rd.dev" = {
