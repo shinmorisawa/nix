@@ -110,7 +110,6 @@ in
         lmms
         myNeovim
         ckan
-        pkgsRocm.blender
         quickemu
         nmap
         traceroute
