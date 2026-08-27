@@ -25,8 +25,12 @@
         shellAliases = {
             ga = "git add";
             gc = "git commit";
-            rebuild = "sudo nixos-rebuild switch --flake ~/nix-config#deathstar";
+            rebuild = "doas nixos-rebuild switch --flake ~/nix-config#deathstar";
+            sudo = "doas";
         };
+        interactiveShellInit = ''
+            set -gx PATH /run/wrappers/bin $PATH
+        '';
     };
 
     programs.starship = {
