@@ -13,9 +13,26 @@
         pulse.enable = true;
     };
 
-    security.sudo.extraConfig = ''
-        Defaults insults
-    '';
+#
+#   deprecated in exchange for doas
+#   security.sudo = {
+#       enable = true;
+#       wheelNeedsPassword = true;
+#       extraConfig = ''
+#           Defaults insults
+#           '';
+#   };
+#
+
+    security.doas = {
+        enable = true;
+        extraRules = [{
+            users = [ "shin" ];
+            noPass = false;
+            keepEnv = true;
+            persist = true;
+        }];
+    };
 
     services.openssh = {
         enable = true;
@@ -48,5 +65,14 @@
         TTYReset = true;
         TTYVHangup = true;
         TTYVTDisallocate = true;
+    };
+
+    services.ollama = {
+        enable = true;
+        package = pkgs.ollama-rocm;
+        environmentVariables = {
+            HCC_AMDGPU_TARGET = "gfx1031";
+        };
+        rocmOverrideGfx = "10.3.0";
     };
 }

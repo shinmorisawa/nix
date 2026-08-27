@@ -30,6 +30,7 @@ pkgs.dockerTools.buildLayeredImage {
         strace
         ninvaders
         greed
+        vim
     ];
 
     extraCommands = ''

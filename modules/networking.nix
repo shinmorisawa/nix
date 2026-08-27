@@ -5,12 +5,22 @@
         hostName = "deathstar";
         networkmanager.enable = true;
         extraHosts = ''
+            // according to deepseek (yes the irony)
             127.0.0.1 openai.com chatgpt.com
             127.0.0.1 api.openai.com
             127.0.0.1 claude.ai anthropic.com
             127.0.0.1 gemini.google.com
-            127.0.0.1 perplexity.api
+            127.0.0.1 perplexity.ai
             127.0.0.1 copilot.microsoft.com
+            127.0.0.1 deepseek.com chat.deepseek.com
+            127.0.0.1 grok.com x.ai
+            127.0.0.1 character.ai
+            127.0.0.1 poe.com
+            127.0.0.1 meta.ai
+            127.0.0.1 kimi.com
+            127.0.0.1 chat.qwen.ai
+            127.0.0.1 manus.im manus.ai
+            127.0.0.1 you.com
         '';
 
         interfaces.enp5s0 = {

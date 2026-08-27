@@ -25,7 +25,7 @@ window#bar {
   background-color: rgba(6, 8, 10, 1.0);
 
   padding: 4px 12px;
-  margin: 0 5px 5px 0;
+  margin: 8px 8px 0 0;
   border-radius: 9999px;
 
   .cpu_module, .memory_module, .time_module, .pinger_module, .ctrl_module {
@@ -65,7 +65,7 @@ window#bar {
 .modules_left {
   background-color: rgba(6, 8, 10, 1.0);
   padding: 4px 12px;
-  margin: 0 0 5px 5px;
+  margin: 8px 0 0 8px;
   border-radius: 9999px;
 
   .mpd_module {
@@ -77,6 +77,6 @@ window#bar {
 .modules_center {
   background-color: rgba(6, 8, 10, 1.0);
   padding: 4px 12px;
-  margin: 0 0 5px 0;
+  margin: 8px 0 0 0;
   border-radius: 9999px;
 }

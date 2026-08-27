@@ -34,5 +34,10 @@
         enable = true;
         pinentryPackage = pkgs.pinentry-curses;
     };
+
+    programs.wireshark = {
+        enable = true;
+        dumpcap.enable = true;
+    };
 }
 

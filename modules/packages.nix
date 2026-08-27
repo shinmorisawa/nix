@@ -81,7 +81,6 @@ in
         file
         crosspipe
         jetbrains.idea
-        ollama-rocm
         deno
         kicad
         imagemagick

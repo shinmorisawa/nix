@@ -52,7 +52,7 @@
 
             border_radius = 16;
             borderpx = 0;
-            rootcolor = "0x030405ff";
+            rootcolor = "0x000000ff";
 
             cursor_size = 32;
             cursor_theme = "Drop-WhiteRinal";

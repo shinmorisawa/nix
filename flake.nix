@@ -37,7 +37,28 @@
             };
             modules = [
                 ./deathstar/hardware-configuration.nix
-                ./configuration.nix
+                ./deathstar/configuration.nix
+                home-manager.nixosModules.home-manager {
+                    home-manager.useGlobalPkgs = true;
+                    home-manager.useUserPackages = true;
+                    home-manager.users.shin.imports = [
+                        ./users/shin/home.nix 
+                        mango.hmModules.mango
+                    ];
+                }
+                sops-nix.nixosModules.sops
+            ];
+        };
+
+        nixosConfigurations.torpedosphere = nixpkgs.lib.nixosSystem {
+            system = "x86_64-linux";
+            specialArgs = {
+                inherit inputs;
+                myNeovim = myNeovimThing;
+            };
+            modules = [
+                ./torpedosphere/hardware-configuration.nix
+                ./torpedosphere/configuration.nix
                 home-manager.nixosModules.home-manager {
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
