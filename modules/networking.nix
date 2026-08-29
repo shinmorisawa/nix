@@ -21,6 +21,7 @@
             127.0.0.1 chat.qwen.ai
             127.0.0.1 manus.im manus.ai
             127.0.0.1 you.com
+            127.0.0.1 venice.ai
         '';
 
         interfaces.enp5s0 = {
